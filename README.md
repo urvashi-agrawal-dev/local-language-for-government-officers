@@ -1,48 +1,49 @@
-# सेवा — आय प्रमाणपत्र समीक्षा
+# Seva — Income Certificate Review
 
-**सेवा** पश्चिम बंगाल के अनुमंडल और ब्लॉक स्तर के अधिकारियों के लिए हिंदी भाषा का आवेदन समीक्षा डैशबोर्ड है। यह Kenpath Full Stack AI Engineer assignment के लिए बनाया गया एक इंटरैक्टिव प्रोटोटाइप है। सभी आवेदक, आवेदन संख्या और रिकॉर्ड काल्पनिक हैं।
+**Seva** is a Hindi-language application review dashboard for government officers handling income certificate requests in West Bengal. It is an interactive prototype built for the Kenpath Full Stack AI Engineer assignment. All applicants, application IDs, and records are fictional.
 
-## समस्या और उपयोगकर्ता
+## Problem and users
 
-आय प्रमाणपत्र के आवेदनों में दस्तावेज़ों की कमी, जानकारी के अंतर और समय-सीमा का दबाव रहता है। अधिकारियों को प्राथमिकता तय करने और हर आवेदन का संदर्भ एक जगह देखने में मदद की ज़रूरत होती है। यह प्रोटोटाइप नदिया जिले के रानाघाट अनुमंडल के एक सहायक जिला अधिकारी के काम पर केंद्रित है। भाषा हिंदी है और सेवा का संदर्भ पश्चिम बंगाल का है।
+Income certificate applications can require officers to check several documents, resolve inconsistencies, and manage deadline pressure. This prototype helps an assistant district officer in the Ranaghat subdivision of Nadia district see which applications need attention and review each case in one place.
 
-## सुविधाएँ
+## What the application does
 
-- लंबित, समय-सीमा पार और निपटाए गए आवेदनों का सारांश।
-- प्राथमिकता सूची, स्थिति फ़िल्टर और नाम, आवेदन संख्या या ब्लॉक से खोज।
-- आवेदन का सार, दस्तावेज़ों की कमी, जानकारी में अंतर और कारण सहित सुझाव।
-- अधिकारी द्वारा आवेदन अनुमोदित करना, अस्वीकार करना या सुधार के लिए लौटाना। निर्णय से पहले पुष्टि माँगी जाती है।
-- काल्पनिक रिकॉर्ड की CSV रिपोर्ट डाउनलोड करना।
+- Shows a dashboard of pending applications, overdue cases, and workload indicators.
+- Lists applications by priority and deadline, with filtering and search by applicant, application ID, or locality.
+- Opens an application detail view with a case summary, declared income, submitted documents, missing items, possible inconsistencies, and a suggested next step with reasons.
+- Lets the officer approve, reject, or return an application for correction. A confirmation prompt appears before the decision is applied.
+- Downloads the sample application list as a CSV file.
 
-## AI सहायता की सीमा
+## AI assistance and human decisions
 
-इस डेमो में AI विश्लेषण नमूना डेटा पर आधारित समझाने योग्य, पहले से लिखे उदाहरण हैं। यह किसी वास्तविक AI सेवा, सरकारी डेटाबेस या दस्तावेज़ सत्यापन से जुड़ा नहीं है। सुझाव केवल सहायता के लिए हैं; अंतिम निर्णय अधिकारी का है। वास्तविक उपयोग के लिए लागू सरकारी नियमों पर आधारित मॉडल, संकेतों के स्रोत और कारण, ऑडिट रिकॉर्ड और अधिकारी की समीक्षा आवश्यक होगी।
+The “AI assistance” in this prototype is made of predefined, explainable examples attached to fictional records. It does not call a live AI model, connect to a government database, or verify documents. Suggestions are advisory; the officer makes the final decision. A production version would need validated rules, traceable sources for each signal, audit logging, secure case storage, and human review.
 
-## तकनीकी निर्णय
+## Technical decisions
 
-- **HTML, CSS और Vanilla JavaScript:** छोटा प्रोटोटाइप; कोई build step या API key ज़रूरी नहीं।
-- **हिंदी इंटरफ़ेस:** Noto Sans Devanagari फ़ॉन्ट, देवनागरी तारीख़/संख्याएँ और स्थानीय सेवा-संदर्भ। Google Fonts उपलब्ध न होने पर सिस्टम फ़ॉन्ट का fallback है।
-- **स्थानीय नमूना डेटा:** आठ काल्पनिक आवेदन `app.js` में हैं। निर्णय लेने पर सूची और सारांश अपडेट होते हैं; पेज refresh करने पर डेमो डेटा फिर से शुरू होता है।
-- **प्रोटोटाइप की सीमाएँ:** लॉगिन, सर्वर, स्थायी भंडारण, वास्तविक AI, PDF रिपोर्ट और सरकारी workflow integration शामिल नहीं हैं।
+- **HTML, CSS, and vanilla JavaScript:** keeps this small prototype easy to run without a build step, dependencies, or API keys.
+- **Hindi-first interface:** the dashboard, sample case details, actions, and status labels are in Hindi. It uses Noto Sans Devanagari from Google Fonts with system-font fallbacks.
+- **Local fictional data:** eight sample applications are defined in `app.js`. Decisions update the queue in the current browser session; refreshing restores the demo data.
+- **Prototype scope:** authentication, a backend, persistent storage, live AI, PDF reporting, and integration with government systems are not included.
 
-## स्थानीय रूप से चलाएँ
+## Run locally
 
-कोई dependency install करने की ज़रूरत नहीं। `index.html` को सीधे ब्राउज़र में खोलें, या static server चलाएँ:
+No dependencies are required. Open `index.html` in a browser, or start a static server from the project directory:
 
 ```bash
 python -m http.server 8000
 ```
 
-फिर `http://localhost:8000` खोलें।
+Then visit `http://localhost:8000`.
 
-## डेमो जानकारी
+## Demo context
 
-- जिला: नदिया, पश्चिम बंगाल
-- अनुमंडल: रानाघाट
-- नमूना सूची: ८ काल्पनिक आवेदन
-- डेमो अधिकारी: उर्वशी सेन, सहायक जिला अधिकारी
+- Service: income certificate applications
+- District: Nadia, West Bengal
+- Subdivision: Ranaghat
+- Sample records: eight fictional applications
+- Demo officer: Urvashi Sen, Assistant District Officer
 
-## आगे के चरण
+## Potential next steps
 
-वास्तविक उपयोग से पहले विभाग से सेवा नियम और दस्तावेज़ सत्यापित करें। सुरक्षित backend, अधिकारी प्रमाणीकरण, audit trail, भूमिका-आधारित अनुमतियाँ, व्यक्तिगत जानकारी की सुरक्षा, स्थायी case storage और स्रोत सहित AI सुझावों पर मानवीय समीक्षा जोड़ें।
+Before real-world use, validate the service rules and required documents with the relevant department. Add secure officer authentication, role-based access, audit trails, privacy safeguards, persistent case storage, and source-backed AI suggestions with officer review.
 
