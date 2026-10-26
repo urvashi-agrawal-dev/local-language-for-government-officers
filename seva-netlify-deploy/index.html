@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f5f6f2" />
+  <title>सेवा | आय प्रमाणपत्र समीक्षा</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="logged-out">
+  <section class="login-screen" id="loginScreen">
+    <form class="login-card" id="loginForm">
+      <div class="login-brand"><span class="brand-mark">स</span><span><b>सेवा</b><small>अधिकारी कार्यक्षेत्र</small></span></div>
+      <div class="login-kicker">नदिया जिला प्रशासन · डेमो पोर्टल</div>
+      <h1>स्वागत है</h1>
+      <p class="login-intro">आवेदन समीक्षा के लिए अपने अधिकारी खाते से साइन इन करें।</p>
+      <label for="loginEmail">ईमेल</label>
+      <input id="loginEmail" type="email" autocomplete="username" value="officer@seva.demo" required />
+      <label for="loginPassword">पासवर्ड</label>
+      <input id="loginPassword" type="password" autocomplete="current-password" value="Seva2026!" required />
+      <div class="login-error" id="loginError" role="alert"></div>
+      <button class="login-submit" type="submit">साइन इन करें <span>→</span></button>
+      <div class="demo-credentials"><b>डेमो लॉगिन</b><span>officer@seva.demo</span><span>Seva2026!</span></div>
+      <small class="login-disclaimer">यह प्रदर्शन हेतु नकली लॉगिन है। इसमें वास्तविक प्रमाणीकरण नहीं है।</small>
+    </form>
+  </section>
+  <aside class="sidebar">
+    <a class="brand" href="#"><span class="brand-mark">स</span><span><b>सेवा</b><small>अधिकारी कार्यक्षेत्र</small></span></a>
+    <div class="district"><span class="district-icon">⌖</span><span><small>जिला प्रशासन</small><b>नदिया, पश्चिम बंगाल</b></span><span class="chevron">⌄</span></div>
+    <div class="nav-label">कार्य क्षेत्र</div>
+    <nav><a class="nav-item active" href="#"><span>▦</span> आवेदन समीक्षा <em id="navCount">१२</em></a><a class="nav-item" href="#"><span>◷</span> मेरे काम <em>४</em></a><a class="nav-item" href="#"><span>✓</span> निपटाए गए</a></nav>
+    <div class="sidebar-foot"><div class="help-mark">?</div><span><b>मदद चाहिए?</b><small>प्रक्रिया और दिशानिर्देश</small></span><span class="chevron">↗</span></div>
+    <div class="profile"><div class="avatar">उ</div><span><b>उर्वशी सेन</b><small>सहायक जिला अधिकारी</small></span><span class="chevron">•••</span></div>
+  </aside>
+  <main class="main">
+    <header class="topbar"><div class="crumb">कार्य क्षेत्र <span>/</span> <b>आवेदन समीक्षा</b></div><div class="top-actions"><span class="today">सोमवार, २६ अक्टूबर २०२६</span><button class="icon-button" aria-label="सूचनाएँ">♧<i></i></button><div class="avatar small-avatar">उ</div></div></header>
+    <section class="page-head"><div><div class="eyebrow"><span class="live-dot"></span> आपका अनुमंडल · रानाघाट</div><h1>सुप्रभात, उर्वशी <span>☀</span></h1><p>आज के आवेदनों पर नज़र डालें। हमने पहले ध्यान देने वाले काम ऊपर रखे हैं।</p></div><button class="outline-button" id="downloadBtn"><span>↓</span> रिपोर्ट डाउनलोड</button></section>
+    <section class="stats"><article class="stat-card"><div class="stat-label">कुल लंबित आवेदन <span class="stat-icon blue">▤</span></div><div class="stat-value" id="pendingTotal">८</div><div class="stat-note">पिछले सप्ताह की तुलना में <b class="positive">↓ ८%</b></div></article><article class="stat-card urgent-card"><div class="stat-label">समय-सीमा बीत चुकी <span class="stat-icon red">◷</span></div><div class="stat-value" id="overdueTotal">३</div><div class="stat-note"><b class="red-text">आज ध्यान देना ज़रूरी है</b></div></article><article class="stat-card"><div class="stat-label">आज निपटाए गए <span class="stat-icon green">✓</span></div><div class="stat-value">८</div><div class="stat-note">पिछले सप्ताह की तुलना में <b class="positive">↑ १२%</b></div></article><article class="stat-card"><div class="stat-label">औसत निपटान समय <span class="stat-icon amber">⌁</span></div><div class="stat-value">४.२ <small>दिन</small></div><div class="stat-note">निर्धारित समय के भीतर</div></article></section>
+    <section class="queue-section"><div class="queue-title"><div><h2>आपकी समीक्षा सूची</h2><p>प्राथमिकता और जमा करने की तारीख के अनुसार</p></div><button class="filter-button" id="filterBtn">☷ <span>सभी आवेदन</span> <span class="chevron">⌄</span></button></div>
+    <div class="queue-layout"><div class="table-wrap"><div class="table-tools"><label class="search"><span>⌕</span><input id="search" placeholder="नाम या आवेदन संख्या खोजें" /></label><div class="sort-note"><span class="live-dot"></span> प्राथमिकता के अनुसार</div></div>
+    <div class="table-scroll"><table><thead><tr><th>आवेदक</th><th>आवेदन संख्या</th><th>जमा तारीख</th><th>समय-सीमा</th><th>स्थिति</th><th></th></tr></thead><tbody id="applicationRows"></tbody></table></div>
+    <div class="table-footer"><span id="resultCount">१२ में से ६ आवेदन दिखाए जा रहे हैं</span><div class="pagination"><button disabled>‹</button><button class="page-number">१</button><button>२</button><button>›</button></div></div></div>
+    <aside class="insight-card"><div class="insight-top"><span class="spark">✳</span><span>आज की संक्षिप्त जानकारी</span><button aria-label="और विकल्प">•••</button></div><h3>पहले ३ आवेदनों पर ध्यान दें</h3><p>इन आवेदनों की समय-सीमा बीत चुकी है। आज समीक्षा करने से सेवा में देरी कम होगी।</p><div class="mini-list" id="urgentList"></div><div class="insight-divider"></div><div class="ai-note"><span>✳</span><p><b>सहायक विश्लेषण</b><br>दस्तावेज़ों की शुरुआती जाँच में २ आवेदनों में जानकारी का अंतर मिला। निर्णय से पहले जाँचें।</p></div><small class="disclaimer">यह केवल सहायक संकेत है, अंतिम निर्णय नहीं।</small></aside></div></section>
+    <footer>सेवा पोर्टल <span>·</span> संस्करण १.० <span class="footer-right">सुरक्षित सरकारी कार्यक्षेत्र <i>●</i></span></footer>
+  </main>
+  <div class="modal-backdrop" id="modalBackdrop" hidden><section class="detail-modal" role="dialog" aria-modal="true" aria-labelledby="modalName"><button class="close-modal" id="closeModal" aria-label="बंद करें">×</button><div id="modalContent"></div></section></div>
+  <div class="toast" id="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>

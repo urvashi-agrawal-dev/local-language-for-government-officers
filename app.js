@@ -32,6 +32,11 @@ document.getElementById("closeModal").addEventListener("click",()=>document.getE
 document.getElementById("modalBackdrop").addEventListener("click",e=>{if(e.target.id==="modalBackdrop")e.currentTarget.hidden=true;});
 document.addEventListener("keydown",e=>{if(e.key==="Escape")document.getElementById("modalBackdrop").hidden=true;});
 document.getElementById("filterBtn").addEventListener("click",()=>{const i=choices.findIndex(x=>x.key===currentFilter);const next=choices[(i+1)%choices.length];currentFilter=next.key;document.querySelector("#filterBtn span").textContent=next.label;render();});
+const demoCredentials={email:"officer@seva.demo",password:"Seva2026!"};
+const loginForm=document.getElementById("loginForm");
+function unlockDemo(){document.body.classList.remove("logged-out");document.getElementById("loginScreen").hidden=true;}
+if(sessionStorage.getItem("seva-demo-login")==="true")unlockDemo();
+loginForm.addEventListener("submit",event=>{event.preventDefault();const email=document.getElementById("loginEmail").value.trim().toLowerCase();const password=document.getElementById("loginPassword").value;const error=document.getElementById("loginError");if(email===demoCredentials.email&&password===demoCredentials.password){sessionStorage.setItem("seva-demo-login","true");error.textContent="";unlockDemo();}else{error.textContent="ईमेल या पासवर्ड सही नहीं है। डेमो लॉगिन विवरण का उपयोग करें।";}});
 document.getElementById("downloadBtn").addEventListener("click",()=>{const csv="आवेदक,आवेदन संख्या,स्थिति,घोषित आय,जमा तारीख\n"+applications.map(a=>`"${a.name}",${a.id},"${a.status}","${a.income}",${a.submitted}`).join("\n");const blob=new Blob(["\ufeff"+csv],{type:"text/csv;charset=utf-8"});const link=document.createElement("a");link.href=URL.createObjectURL(blob);link.download="seva-applications.csv";link.click();URL.revokeObjectURL(link.href);showToast("आवेदन रिपोर्ट डाउनलोड हो गई");});
 render();renderUrgent();
 

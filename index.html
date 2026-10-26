@@ -10,7 +10,23 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
+<body class="logged-out">
+  <section class="login-screen" id="loginScreen">
+    <form class="login-card" id="loginForm">
+      <div class="login-brand"><span class="brand-mark">स</span><span><b>सेवा</b><small>अधिकारी कार्यक्षेत्र</small></span></div>
+      <div class="login-kicker">नदिया जिला प्रशासन · डेमो पोर्टल</div>
+      <h1>स्वागत है</h1>
+      <p class="login-intro">आवेदन समीक्षा के लिए अपने अधिकारी खाते से साइन इन करें।</p>
+      <label for="loginEmail">ईमेल</label>
+      <input id="loginEmail" type="email" autocomplete="username" value="officer@seva.demo" required />
+      <label for="loginPassword">पासवर्ड</label>
+      <input id="loginPassword" type="password" autocomplete="current-password" value="Seva2026!" required />
+      <div class="login-error" id="loginError" role="alert"></div>
+      <button class="login-submit" type="submit">साइन इन करें <span>→</span></button>
+      <div class="demo-credentials"><b>डेमो लॉगिन</b><span>officer@seva.demo</span><span>Seva2026!</span></div>
+      <small class="login-disclaimer">यह प्रदर्शन हेतु नकली लॉगिन है। इसमें वास्तविक प्रमाणीकरण नहीं है।</small>
+    </form>
+  </section>
   <aside class="sidebar">
     <a class="brand" href="#"><span class="brand-mark">स</span><span><b>सेवा</b><small>अधिकारी कार्यक्षेत्र</small></span></a>
     <div class="district"><span class="district-icon">⌖</span><span><small>जिला प्रशासन</small><b>नदिया, पश्चिम बंगाल</b></span><span class="chevron">⌄</span></div>
